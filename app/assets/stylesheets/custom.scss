@@ -1,0 +1,35 @@
+
+/* Application */
+.view-wrapper {
+	padding-top: 10%;
+}
+
+
+/* Navigation */
+.navigation {
+	&--nav {
+		margin: 0;
+		padding: 0;
+	}
+	
+	&--buttons {
+		button {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+
+/* Index */
+
+a.button--anchor {
+	text-decoration: none;
+	background-color: red;
+	height: 100%;
+}
+
+.li--hover:hover {
+	background-color: $gray-lighter;
+}
+
