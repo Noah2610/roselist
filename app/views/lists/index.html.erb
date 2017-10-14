@@ -1,0 +1,20 @@
+
+<%= provide :title, "" %>
+
+<ul class="list-group">
+	<% @lists.each do |list| %>
+			<a href="<%= show_list_path list %>" class="button--anchor">
+			<li class="list-group-item li--hover">
+				<div class="row">
+					<span class="col-sm-6">
+						<%= list.name %>
+					</span>
+					<span class="col-sm-6 pull-right text-right">
+						<%= list.created_at.strftime "%d. %B '%y" %>
+					</span>
+				</div>
+			</li>
+		</a>
+	<% end %>
+</ul>
+

@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
-	root 'entries#index'
+	root 'lists#index'
 
-  get 'list',      to: 'entries#index',  as: 'entries'
-  get 'edit/:id',  to: 'entries#edit',   as: 'edit'
-	get 'new',       to: 'entries#new',    as:'new'
+  get 'lists',            to: 'lists#index',  as: 'lists'
+  get 'lists/:id/show',   to: 'lists#show',   as: 'show_list'
+	get 'lists/new',        to: 'lists#new',    as: 'new_list'
+  get 'lists/:id/edit',   to: 'lists#edit',   as: 'edit_list'
+
+  get 'entry/:id/edit',  to: 'entries#edit',  as: 'edit_entry'
+	get 'lists/:id/new',   to: 'lists#new',     as: 'new_entry'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

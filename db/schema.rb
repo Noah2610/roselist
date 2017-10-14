@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171013211322) do
+ActiveRecord::Schema.define(version: 20171014210542) do
 
   create_table "entries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
     t.text "description"
     t.float "quantity", limit: 24
     t.string "metric"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "list_id"
+  end
+
+  create_table "lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.string "name"
+    t.integer "priority"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
