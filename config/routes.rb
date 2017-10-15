@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
 	root 'lists#index'
 
-  get 'lists',            to: 'lists#index',  as: 'lists'
-  get 'lists/:id/show',   to: 'lists#show',   as: 'show_list'
-	get 'lists/new',        to: 'lists#new',    as: 'new_list'
-  get 'lists/:id/edit',   to: 'lists#edit',   as: 'edit_list'
+  get 'lists',           to: 'lists#index',  as: 'lists'
+  get 'lists/:id/show',  to: 'lists#show',   as: 'show_list'
+	get 'lists/new',       to: 'lists#new',    as: 'new_list'
+  get 'lists/:id/edit',  to: 'lists#edit',   as: 'edit_list'
 
   get 'entry/:id/edit',  to: 'entries#edit',  as: 'edit_entry'
 	get 'lists/:id/new',   to: 'lists#new',     as: 'new_entry'
