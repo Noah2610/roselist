@@ -8,7 +8,12 @@ class ListsController < ApplicationController
 		@entries = @list.entries
   end
 
-	def new
+	def new_list
+		@list = List.create! name: "(New List)"
+		redirect_to lists_path
+	end
+
+	def new_entry
 		# New Entry in List
 		@list = List.find params[:id]
 		@entry = Entry.new
