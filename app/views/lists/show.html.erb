@@ -1,5 +1,6 @@
 
 <%= provide :title, @list.name %>
+<%= provide :button, "lists/new_entry_button" %>
 
 <ul class="list-group">
 	<% @entries.each do |entry| %>
@@ -10,7 +11,8 @@
 						<%= entry.name %>
 					</span>
 					<span class="col-sm-6 pull-right text-right">
-						<%= entry.created_at.strftime "%d. %B '%y" %>
+						<%#= entry.created_at.strftime "%d. %B '%y" %>
+						<%= entry.quantity %>
 					</span>
 				</div>
 			</li>
