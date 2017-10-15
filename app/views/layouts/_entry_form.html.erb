@@ -1,0 +1,17 @@
+
+<%= form_for @entry, method: @method, url: @url do |form| %>
+	<div class="row">
+		<div class="col-xs-8">
+			<%= form.text_field :name, class: "entry entry__title form-control", value: @entry.name, placeholder: "Name" %>
+		</div>
+		<div class="col-xs-4 pull-right">
+			<%= form.text_field :quantity, class: "entry entry__quantity form-control", value: @entry.quantity, placeholder: "Stk" %>
+		</div>
+		<div class="col-xs-8">
+			<%= form.text_area :description, class: "entry entry__description form-control", value: @entry.description, placeholder: "Description" %>
+		</div>
+	</div>
+
+	<%= form.submit "Submit" %>
+<% end %>
+

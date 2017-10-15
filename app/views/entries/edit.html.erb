@@ -5,17 +5,5 @@
 	<%= link_to "Back", show_list_path(@entry.list) %>
 </div>
 
-<div class="row">
-	<div class="col-xs-8">
-		<p class="entry entry__title"><%= @entry.name %></p>
-	</div>
-	<div class="col-xs-4 pull-right">
-		<p class="entry entry__quantity"><%= @entry.quantity %></p>
-	</div>
-	<div class="col-xs-8">
-		<p class="entry entry__description"><%= @entry.description %></p>
-	</div>
-</div>
-
-
+<%= render 'layouts/entry_form' %>
 

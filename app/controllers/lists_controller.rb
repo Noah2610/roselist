@@ -9,6 +9,11 @@ class ListsController < ApplicationController
   end
 
 	def new
+		# New Entry in List
+		@list = List.find params[:id]
+		@entry = Entry.new
+		@method = "post"
+		@url = create_entry_path
 	end
 
   def create

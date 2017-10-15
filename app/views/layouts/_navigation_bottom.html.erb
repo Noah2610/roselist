@@ -4,15 +4,15 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="navigation--buttons">
 			<div class="row">
-					<a href="<%= root_url %>" class="btn btn-default col-xs-6">
+					<a href="<%= root_path %>" class="btn btn-default col-xs-6">
 						Home
 					</a>
 					<% if (controller_name == "lists" && action_name == "show") %>
-						<a href="#new_entry_js" class="btn btn-default col-xs-6">
+						<a href="<%= new_entry_path %>" class="btn btn-default col-xs-6">
 							New Entry
 						</a>
 					<% elsif (controller_name == "lists" && action_name == "index") %>
-						<a href="<%= new_list_url %>" class="btn btn-default col-xs-6">
+						<a href="<%= new_list_path %>" class="btn btn-default col-xs-6">
 							New List
 						</a>
 					<% end %>
