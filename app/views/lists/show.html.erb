@@ -2,6 +2,8 @@
 <%= provide :title, @list.name %>
 <%= provide :button, "lists/new_entry_button" %>
 
+<h1><%= @list.name %></h1>
+
 <ul class="list-group">
 	<% @entries.each do |entry| %>
 			<a href="<%= edit_entry_path entry %>" class="button--anchor">

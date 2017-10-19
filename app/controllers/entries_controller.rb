@@ -20,7 +20,12 @@ class EntriesController < ApplicationController
 
 	def update
 		@entry = Entry.find params[:id]
-		redirect_to edit_entry_path @entry
+		if (@entry.update_attributes! params_accept(:entry))
+			flash[:success] = "Updated entry."
+			redirect_to edit_entry_path @entry
+		else
+			flash[:danger] = "Couldn't update entry."
+		end
 	end
 
 	private
