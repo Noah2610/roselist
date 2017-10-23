@@ -2,7 +2,7 @@
 <% provide :title, @entry.name %>
 <% provide :button, "entries/save_button" %>
 
-<%= link_to "Back", show_list_path(@entry.list), class: "btn btn-default entry__btn-back" %>
+<%= link_to "Back", list_path(@entry.list), class: "btn btn-default entry__btn-back" %>
 
 <%= render 'layouts/entry_form' %>
 

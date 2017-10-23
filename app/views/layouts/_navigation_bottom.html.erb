@@ -2,14 +2,14 @@
 <nav class="navigation--nav navbar navbar-default navbar-fixed-bottom">
 	<div class="container-fluid">
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="navigation--buttons">
-			<div class="row">
-					<a href="<%= root_path %>" class="btn btn-default col-xs-6">
-						Home
-					</a>
+		<div class="row">
+			<div class="btn-group col-xs-12">
+				<div class="row">
+					<%= link_to "Home", root_path, class: "btn btn-default col-xs-6 navigation--button" %>
 					<% unless (yield(:button).blank?) %>
 						<%= render yield(:button) %>
 					<% end %>
+				</div>
 			</div>
 		</div>
 	</div>

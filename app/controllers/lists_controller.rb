@@ -8,9 +8,9 @@ class ListsController < ApplicationController
 		@entries = @list.entries
   end
 
-	def new_list
-		@list = List.create! name: "(New List)"
-		redirect_to lists_path
+	def create
+		list = List.create! params_accept(:list)
+		redirect_to list_path list
 	end
 
 	def new_entry
@@ -21,9 +21,16 @@ class ListsController < ApplicationController
 		@url = create_entry_path
 	end
 
-  def create
-  end
-
   def destroy
   end
+
+	private
+
+		def params_accept target
+			case target
+			when :list
+				params.require(:list).permit(:name)
+			end
+		end
+
 end

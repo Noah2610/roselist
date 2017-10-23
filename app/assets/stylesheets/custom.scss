@@ -8,15 +8,10 @@
 /* Navigation */
 .navigation {
 	&--nav {
-		margin: 0;
-		padding: 0;
 	}
 	
-	&--buttons {
-		button {
-			width: 100%;
-			height: 100%;
-		}
+	&--button {
+		padding: 16px;
 	}
 }
 
@@ -31,6 +26,38 @@ a.button--anchor {
 
 .li--hover:hover {
 	background-color: $gray-lighter;
+}
+
+/* New List Dialog */
+$dialog_width: 320px;
+$dialog_height: 192px;
+.new_list_dialog {
+	position: fixed;
+	width: $dialog_width;
+	height: $dialog_height;
+	top: 50%;
+	left: 50%;
+	margin-top: -($dialog_height / 2);
+	margin-left: -($dialog_width / 2);
+	text-align: center;
+	background-color: $gray-lighter;
+	padding: 16px;
+	border: 1px solid black;
+	border-radius: 4px;
+	font-size: 150%;
+
+	.new_list_dialog__button {
+		width: 100%;
+		height: $dialog_height / 4;
+		margin-top: $dialog_height / 8;
+	}
+}
+
+/* Transparent Input Text Field */
+.input--transparent {
+	border: none;
+	border-bottom: 1px dotted $gray-light;
+	border-radius: 4px;
 }
 
 
