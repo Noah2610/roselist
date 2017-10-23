@@ -2,7 +2,17 @@
 <%= provide :title, @list.name %>
 <%= provide :button, "lists/new_entry_button" %>
 
-<h1><%= @list.name %></h1>
+<div class="row title--row">
+	<%= form_for @list, method: "patch" do |f| %>
+		<h3>
+			<%= f.text_field :name, value: @list.name, class: "col-xs-8 input--transparent", id: "list_title" %>
+			<%= f.submit "Rename", class: "hidden", id: "update_list_button" %>
+		</h3>
+	<% end %>
+	<div class="col-xs-4">
+		<%= link_to "Delete", list_path(@list), method: "delete", class: "btn btn-danger pull-right", data: { confirm: "List will be deleted forever. Delete?" } %>
+	</div>
+</div>
 
 <ul class="list-group">
 	<% @entries.each do |entry| %>
@@ -21,4 +31,6 @@
 		</a>
 	<% end %>
 </ul>
+
+<%= javascript_include_tag "_list_rename" %>
 

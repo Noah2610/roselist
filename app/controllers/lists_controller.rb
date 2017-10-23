@@ -21,7 +21,25 @@ class ListsController < ApplicationController
 		@url = create_entry_path
 	end
 
+	def update
+		list = List.find params[:id]
+		if (list.update_attributes! params_accept(:list))
+			flash[:success] = "Updated List."
+		else
+			flash[:danger] = "There was a problem updating this List."
+		end
+		redirect_to list_path list
+	end
+
   def destroy
+		list = List.find params[:id]
+		if (list.destroy!)
+			flash[:success] = "List has been deleted."
+			redirect_to root_path
+		else
+			flash[:danger] = "There was a problem deleting the List."
+			redirect_to list_path list
+		end
   end
 
 	private
