@@ -7,9 +7,14 @@ class EntriesController < ApplicationController
 	end
 
 	def create
-		@list = List.find params[:id]
-		@entry = @list.entries.create! params_accept(:entry)
-		redirect_to list_path @list
+		list = List.find params[:id]
+		@entry = list.entries.new params_accept(:entry)
+		if (@entry.save)
+			flash[:success] = "New entry added."
+			redirect_to list_path list
+		else
+			render "new"
+		end
 	end
 
   def edit

@@ -3,7 +3,7 @@ class CreateEntries < ActiveRecord::Migration[5.1]
     create_table :entries do |t|
       t.string :name
       t.text :description
-      t.float :quantity
+			t.float :quantity, default: 1.0
       t.string :metric
 
       t.timestamps

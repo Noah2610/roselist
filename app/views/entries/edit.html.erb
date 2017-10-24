@@ -1,5 +1,5 @@
 
-<% provide :title, @entry.name %>
+<% provide :title, "New Entry - #{@entry.list.name}" %>
 <% provide :button, "entries/save_button" %>
 
 <div class="row">
@@ -11,5 +11,5 @@
 	</div>
 </div>
 
-<%= render 'layouts/entry_form' %>
+<%= render 'form' %>
 

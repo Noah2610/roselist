@@ -1,0 +1,19 @@
+
+<%= form_for @entry, method: @method do |form| %>
+	<%= render 'shared/error_messages', object: form.object %>
+
+	<div class="row">
+		<div class="col-xs-8">
+			<%= form.text_field :name, class: "entry entry__title form-control", value: @entry.name, placeholder: "Name" %>
+		</div>
+		<div class="col-xs-4 pull-right">
+			<%= form.text_field :quantity, class: "entry entry__quantity form-control", value: @entry.quantity, placeholder: "Stk" %>
+		</div>
+		<div class="col-xs-8">
+			<%= form.text_area :description, class: "entry entry__description form-control", value: @entry.description, placeholder: "Description" %>
+		</div>
+	</div>
+
+	<%= form.submit "SUBMIT BUTTON", id: "entry-form-submit", class: "hidden" %>
+<% end %>
+
