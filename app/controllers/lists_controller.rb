@@ -15,10 +15,10 @@ class ListsController < ApplicationController
 
 	def new_entry
 		# New Entry in List
-		@list = List.find params[:id]
-		@entry = Entry.new
+		list = List.find params[:id]
+		@entry = Entry.new list_id: list.id
 		@method = "post"
-		@url = create_entry_path
+		render 'entries/new'
 	end
 
 	def update

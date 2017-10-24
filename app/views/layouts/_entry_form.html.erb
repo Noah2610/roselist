@@ -1,5 +1,5 @@
 
-<%= form_for @entry, method: @method, url: @url do |form| %>
+<%= form_for @entry, method: @method do |form| %>
 	<div class="row">
 		<div class="col-xs-8">
 			<%= form.text_field :name, class: "entry entry__title form-control", value: @entry.name, placeholder: "Name" %>
