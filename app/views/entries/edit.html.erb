@@ -2,7 +2,14 @@
 <% provide :title, @entry.name %>
 <% provide :button, "entries/save_button" %>
 
-<%= link_to "Back", list_path(@entry.list), class: "btn btn-default entry__btn-back" %>
+<div class="row">
+	<div class="col-xs-6">
+		<%= link_to "Back", list_path(@entry.list), class: "btn btn-default entry__btn-back" %>
+	</div>
+	<div class="col-xs-6">
+		<%= link_to "Delete", entry_path(@entry), method: "delete", data: {confirm: "Delete entry?"}, class: "btn btn-danger pull-right" %>
+	</div>
+</div>
 
 <%= render 'layouts/entry_form' %>
 

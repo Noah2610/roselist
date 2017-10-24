@@ -21,9 +21,21 @@ class EntriesController < ApplicationController
 		@entry = Entry.find params[:id]
 		if (@entry.update_attributes! params_accept(:entry))
 			flash[:success] = "Updated entry."
-			redirect_to edit_entry_path @entry
+			redirect_to list_path @entry.list
 		else
 			flash[:danger] = "Couldn't update entry."
+			redirect_to edit_entry_path @entry
+		end
+	end
+
+	def destroy
+		entry = Entry.find params[:id]
+		if (entry.destroy!)
+			flash[:success] = "Entry has been deleted."
+			redirect_to list_path entry.list
+		else
+			flash[:danger] = "Entry couldn't be deleted."
+			redirect_to entry_path entry
 		end
 	end
 

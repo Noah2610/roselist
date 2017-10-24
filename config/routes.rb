@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get    'entry/:id',          to: 'entries#edit',    as: 'edit_entry'
   post   'entry/:id',          to: 'entries#create',  as: 'entries'
   patch  'entry/:id',          to: 'entries#update',  as: 'entry'
+  delete 'entry/:id',          to: 'entries#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
